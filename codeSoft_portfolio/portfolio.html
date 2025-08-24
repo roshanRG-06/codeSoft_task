@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    .about img {
+      display: block;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+    }
+
+    .skills ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .skills li {
+      background: #333;
+      color: #fff;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .project-card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .resume a {
+      display: block;
+      width: max-content;
+      margin: auto;
+      padding: 10px 20px;
+      background: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .contact p {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Your Name</h1>
+    <p>Web Developer | Designer | Programmer</p>
+  </header>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>About Me</h2>
+    <img src="your-photo.jpg" alt="Your Photo">
+    <p>Hello! I am a passionate web developer with experience in HTML, CSS, and JavaScript. 
+    I enjoy creating clean and user-friendly websites that deliver great experiences.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills">
+    <h2>My Skills</h2>
+    <ul>
+      <li>HTML & CSS</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Node.js</li>
+      <li>MongoDB</li>
+    </ul>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <img src="project1.jpg" alt="Project 1">
+      <h3>Project One</h3>
+      <p>A brief description of your project goes here.</p>
+    </div>
+    <div class="project-card">
+      <img src="project2.jpg" alt="Project 2">
+      <h3>Project Two</h3>
+      <p>A brief description of your project goes here.</p>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section class="resume">
+    <h2>Resume</h2>
+    <a href="resume.pdf" download>Download My Resume</a>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: yourname@example.com</p>
+    <p>Phone: +91-9876543210</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
