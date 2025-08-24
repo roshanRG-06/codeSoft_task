@@ -1,2 +1,147 @@
-gfhfhghf
-CALCULATOR
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f4f9;
+      font-family: Arial, sans-serif;
+    }
+
+    .calculator {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+      width: 300px;
+    }
+
+    .display {
+      background: #000;
+      color: #0f0;
+      font-size: 2rem;
+      text-align: right;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    button {
+      padding: 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .btn-operator {
+      background: #ff9500;
+      color: #fff;
+    }
+
+    .btn-number {
+      background: #444;
+      color: #fff;
+    }
+
+    .btn-clear {
+      background: #e63946;
+      color: #fff;
+    }
+
+    .btn-equal {
+      background: #2a9d8f;
+      color: #fff;
+      grid-column: span 2; /* equal button bigger */
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <!-- Display -->
+    <div id="display" class="display">0</div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <button class="btn-clear">C</button>
+      <button class="btn-operator">÷</button>
+      <button class="btn-operator">×</button>
+      <button class="btn-operator">-</button>
+
+      <button class="btn-number">7</button>
+      <button class="btn-number">8</button>
+      <button class="btn-number">9</button>
+      <button class="btn-operator">+</button>
+
+      <button class="btn-number">4</button>
+      <button class="btn-number">5</button>
+      <button class="btn-number">6</button>
+      <button class="btn-equal">=</button>
+
+      <button class="btn-number">1</button>
+      <button class="btn-number">2</button>
+      <button class="btn-number">3</button>
+      <button class="btn-number">0</button>
+
+      <button class="btn-number">.</button>
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById("display");
+    const buttons = document.querySelectorAll("button");
+    let currentInput = "";
+    let resetNext = false;
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const value = button.textContent;
+
+        if (button.classList.contains("btn-clear")) {
+          currentInput = "";
+          display.textContent = "0";
+        } 
+        else if (value === "=") {
+          try {
+            // Replace symbols for eval
+            let expression = currentInput.replace(/×/g, "*").replace(/÷/g, "/");
+            currentInput = eval(expression).toString();
+            display.textContent = currentInput;
+            resetNext = true;
+          } catch {
+            display.textContent = "Error";
+            currentInput = "";
+          }
+        } 
+        else {
+          if (resetNext && !isNaN(value)) {
+            currentInput = value; // start new number
+            resetNext = false;
+          } else {
+            currentInput += value;
+          }
+          display.textContent = currentInput;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
